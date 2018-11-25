@@ -9,6 +9,13 @@ package Lexer;
  *
  * @author habib
  */
-public class Keyword {
+public class Keyword extends Token
+{
+    public final String lexeme;
     
+    public Keyword(String lexeme , int tag)
+    {
+        super(tag);
+        this.lexeme=lexeme;
+    }
 }

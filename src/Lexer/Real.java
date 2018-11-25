@@ -12,5 +12,4 @@ package Lexer;
 public class Real 
 {
     
-    
 }

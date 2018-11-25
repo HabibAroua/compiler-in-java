@@ -9,6 +9,7 @@ package Lexer;
  *
  * @author habib
  */
-public class Tag {
+public class Tag
+{
     
 }

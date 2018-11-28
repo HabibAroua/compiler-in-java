@@ -19,4 +19,9 @@ public class Keyword extends Token
         this.lexeme=lexeme;
     }
     
+    public static final Keyword AND =new Keyword("&&",Tag.AND),
+        OR =new Keyword("||",Tag.OR),
+        EQUAL =new Keyword("==",Tag.EQ),
+        N_EQUAL=new Keyword("!=",Tag.NE),
+       //2.36
 }

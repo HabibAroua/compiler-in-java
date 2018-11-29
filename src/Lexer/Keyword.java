@@ -23,5 +23,6 @@ public class Keyword extends Token
         OR =new Keyword("||",Tag.OR),
         EQUAL =new Keyword("==",Tag.EQ),
         N_EQUAL=new Keyword("!=",Tag.NE),
+        L_EQUAL=new Keyword("<=",Tag.LE),
        //2.36
 }

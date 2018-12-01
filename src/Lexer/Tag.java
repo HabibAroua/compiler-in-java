@@ -24,5 +24,10 @@ public class Tag
     public final static int BREAK=261;
     public final static int FALSE=262;
     public final static int TRUE=263;
-    public final static int MINUS=264;
+    public final static int ID=264;
+    public final static int NUM=265;
+    public final static int REAL=266;
+    public final static int BASIC_TYPE=267;
+    public final static int ARRAY_TYPE=268;
+    public final static int MINUS=269;
 }

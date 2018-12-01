@@ -30,4 +30,6 @@ public class Tag
     public final static int BASIC_TYPE=267;
     public final static int ARRAY_TYPE=268;
     public final static int MINUS=269;
+    
+    public final static int TEMP=273;
 }

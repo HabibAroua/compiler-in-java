@@ -24,5 +24,14 @@ public class Keyword extends Token
         EQUAL =new Keyword("==",Tag.EQ),
         N_EQUAL=new Keyword("!=",Tag.NE),
         L_EQUAL=new Keyword("<=",Tag.LE),
+        G_EQUAL=new Keyword(">=",Tag.GE),
+        TRUE=new Keyword("true",Tag.TRUE),
+        FALSE=new Keyword("false",Tag.FALSE),
+        IF=new Keyword("if",Tag.IF),
+        ELSE=new Keyword("else",Tag.ELSE),
+        BREAK=new Keyword("break",Tag.BREAK),
+        DO=new Keyword("DO",Tag.DO),
+        WHILE=new Keyword("while",Tag.WHILE),
+        MINUS=new Keyword("minus",Tag.MINUS);
        //2.36
 }

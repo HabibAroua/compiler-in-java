@@ -134,25 +134,40 @@ public class Lexer
                 v=10*v+Character.digit(peek, 10);
                 read();
             }while(Character.isDigit(peek));
-        }
-        
-        if(peek!='.')
-        {
-            return new Num(v);
-        }
-        
-        float x=v , d=10;
-        for(;;)
-        {
-            read();
-            if(!Character.isDigit(peek))
+            if(peek!='.')
             {
-                break;
+                return new Num(v);
             }
-            x=x+Character.digit(peek, 10)/d;
-            d=d*10;
+            float x=v , d=10;
+            for(;;)
+            {
+                read();
+                if(!Character.isDigit(peek))
+                {
+                    break;
+                }
+                x=x+Character.digit(peek, 10)/d;
+                d=d*10;
+            }
+            return new Real(x);
         }
-        return new Real(x);
+        if(java.lang.Character.isLetter((int) peek))
+        {
+            StringBuilder b=new StringBuilder();
+            do
+            {
+                b.append(peek);
+                read();
+            }while(java.lang.Character.isLetter((int) peek));
+            String s=b.toString();
+            Keyword w=(Keyword) words.get(s);
+            if(w!=null)
+            {
+                return w;
+            }
+            return new Keyword(s, Tag.ID);
+        } 
+        
     }
 }
 

@@ -126,7 +126,33 @@ public class Lexer
                             return new Token('!');
                         }
         }
+        int v=0;
+        if(Character.isDigit(peek))
+        {
+            do
+            {
+                v=10*v+Character.digit(peek, 10);
+                read();
+            }while(Character.isDigit(peek));
+        }
         
+        if(peek!='.')
+        {
+            return new Num(v);
+        }
+        
+        float x=v , d=10;
+        for(;;)
+        {
+            read();
+            if(!Character.isDigit(peek))
+            {
+                break;
+            }
+            x=x+Character.digit(peek, 10)/d;
+            d=d*10;
+        }
+        return new Real(x);
     }
 }
 

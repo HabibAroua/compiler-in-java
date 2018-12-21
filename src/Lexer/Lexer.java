@@ -167,9 +167,8 @@ public class Lexer
             }
             return new Keyword(s, Tag.ID);
         } 
-        
+        Token t=new Token(peek);
+        peek=' ';
+        return t;
     }
 }
-
-    
-

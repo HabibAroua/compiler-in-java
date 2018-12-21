@@ -95,10 +95,40 @@ public class Lexer
                         }
             case '>' :  if(read('='))
                         {
-                            
+                            return Keyword.G_EQUAL;
+                        }
+                        else
+                        {
+                            return new Token('>');
+                        }
+            case '<' :  if(read('='))
+                        {
+                            return Keyword.L_EQUAL;
+                        }
+                        else
+                        {
+                            return new Token('<');
+                        }
+            case '='  : if(read('='))
+                        {
+                            return Keyword.EQUAL;
+                        }
+                        else
+                        {
+                            return new Token('=');
+                        }
+            case '!'  : if(read('='))
+                        {
+                            return Keyword.N_EQUAL;
+                        }
+                        else
+                        {
+                            return new Token('!');
                         }
         }
+        
     }
-   
-    
 }
+
+    
+

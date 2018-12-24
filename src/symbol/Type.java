@@ -22,7 +22,13 @@ public class Type extends Keyword
     
     public static Type INT =new Type("int",Tag.BASIC_TYPE,4);
     public static Type FLOAT =new Type("int",Tag.BASIC_TYPE,4);
-    public static Type INT =new Type("int",Tag.BASIC_TYPE,4);
-    public static Type INT =new Type("int",Tag.BASIC_TYPE,4);
+    public static Type CHAR =new Type("int",Tag.BASIC_TYPE,1);
+    public static Type BOOLEAN =new Type("int",Tag.BASIC_TYPE,1);
        
+    public static boolean isNumeric(Type p)
+    {
+        return p == Type.CHAR || p == Type.INT || p == Type.FLOAT;
+    }
+    
+    
 }

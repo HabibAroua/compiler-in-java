@@ -1,5 +1,5 @@
 package redcompiler;
-
+import Lexer.Lexer;
 /**
  *
  * @author habib
@@ -12,7 +12,7 @@ public class RedCompiler {
     public static void main(String[] args)
     {
         // TODO code application logic here
-        System.out.println("We are going to create our fisrt compiler");
+        Lexer lexer=new Lexer();
     }
     
 }

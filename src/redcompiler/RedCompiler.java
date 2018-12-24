@@ -12,7 +12,7 @@ public class RedCompiler {
     public static void main(String[] args)
     {
         // TODO code application logic here
-        System.out.println("We are going to create our fisrt compier");
+        System.out.println("We are going to create our fisrt compiler");
     }
     
 }

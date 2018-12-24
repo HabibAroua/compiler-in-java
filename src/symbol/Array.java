@@ -9,6 +9,7 @@ package symbol;
  *
  * @author habib
  */
-public class Array {
+public class Array 
+{
     
 }

@@ -4,11 +4,25 @@
  * and open the template in the editor.
  */
 package symbol;
-
+import Lexer.Keyword;
+import Lexer.Tag;
 /**
  *
  * @author habib
  */
-public class Type {
+public class Type extends Keyword
+{
+    public final int width;
     
+    public Type(String lexeme , int tag , int width)
+    {
+        super(lexeme,tag);
+        this.width=width;
+    }
+    
+    public static Type INT =new Type("int",Tag.BASIC_TYPE,4);
+    public static Type FLOAT =new Type("int",Tag.BASIC_TYPE,4);
+    public static Type INT =new Type("int",Tag.BASIC_TYPE,4);
+    public static Type INT =new Type("int",Tag.BASIC_TYPE,4);
+       
 }

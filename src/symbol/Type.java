@@ -30,5 +30,20 @@ public class Type extends Keyword
         return p == Type.CHAR || p == Type.INT || p == Type.FLOAT;
     }
     
-    
+    public static Type maxNumericType(Type t1 , Type t2)
+    {
+        if(!isNumeric(t1) || isNumeric(t2))
+        {
+            return null;
+        }
+        if(t1==Type.FLOAT || t2==Type.FLOAT)
+        {
+            return Type.FLOAT;
+        }
+        if(t1==Type.INT || t2==Type.INT)
+        {
+            return Type.INT;
+        }
+        return Type.CHAR;
+    }
 }

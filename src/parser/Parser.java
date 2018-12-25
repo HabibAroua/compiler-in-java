@@ -194,6 +194,27 @@ public class Parser
     
     private void unary() throws IOException
     {
+        if(look.tag=='-')
+        {
+            move();
+            unary();
+        }
+        else
+        {
+            if(look.tag=='!')
+            {
+                move();
+                unary();
+            }
+            else
+            {
+                factor();
+            }
+        }
+    }
+    
+    private void factor() throws IOException
+    {
         
     }
 }

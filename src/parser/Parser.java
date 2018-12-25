@@ -215,6 +215,37 @@ public class Parser
     
     private void factor() throws IOException
     {
+        switch(look.tag)
+        {
+            case '(' : move();
+                       bool();
+                       match(')');
+                       return;
+            case Tag.NUM : move();
+                           return;
+            case Tag.REAL : move();
+                            return;
+            case Tag.TRUE : move();
+                            return;
+            case Tag.FALSE : move();
+                             return;
+            case Tag.ID    : move();
+                             if(look.tag !='[')
+                             {
+                                 
+                             }
+                             else
+                             {
+                                 offset();
+                             }
+                             return;
+            default : error("Syntax error");
+            
+        }
+    }
+    
+    private void offset() throws IOException
+    {
         
     }
 }

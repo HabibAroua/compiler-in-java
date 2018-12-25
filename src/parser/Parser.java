@@ -143,6 +143,7 @@ public class Parser
         {
             move();
             equality();
+            //8:45
         }
     }
     

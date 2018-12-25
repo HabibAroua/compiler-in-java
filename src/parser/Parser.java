@@ -106,6 +106,49 @@ public class Parser
     
     private void stmt() throws IOException
     {
-        
+        switch(look.tag)
+        {
+            case ';'      : move();
+                            return ;
+            case Tag.IF   : match(Tag.IF);
+                            match('(');
+                            bool();
+                            match(')');
+                            stmt();
+                            if(look.tag!=Tag.ELSE)
+                            {
+                                return ;
+                            }
+                            match(Tag.ELSE);
+                            stmt();
+                            return;
+            
+        }
+    }
+    
+    private void bool() throws IOException
+    {
+        join();
+        while(look.tag==Tag.OR)
+        {
+            move();
+            join();
+        }
+    }
+    
+    private void join() throws IOException
+    {
+        equality();
+        while(look.tag==Tag.AND)
+        {
+            move();
+            equality();
+        }
+    }
+    
+    private void equality() throws IOException
+    {
+                
+                
     }
 }

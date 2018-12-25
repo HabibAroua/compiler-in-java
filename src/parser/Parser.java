@@ -149,7 +149,31 @@ public class Parser
     
     private void equality() throws IOException
     {
-                
-                
+        rel();
+        while(look.tag==Tag.EQ || look.tag==Tag.NE)
+        {
+            move();
+            rel();
+        }
+    }
+    
+    private void rel() throws IOException
+    {
+        expr();
+        switch(look.tag)
+        {
+            case '<' :
+            case Tag.LE :
+            case Tag.GE :
+            case '>' :  move();
+                        expr();
+                        return;
+            default : 
+        }
+    }
+    
+    private void expr() throws IOException 
+    {
+        
     }
 }

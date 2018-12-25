@@ -246,6 +246,14 @@ public class Parser
     
     private void offset() throws IOException
     {
-        
+        match('[');
+        bool();
+        match(']');
+        while(look.tag =='[')
+        {
+            match('[');
+            bool();
+            match(']');
+        }
     }
 }

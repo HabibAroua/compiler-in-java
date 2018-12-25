@@ -5,6 +5,7 @@
  */
 package parser;
 import Lexer.Lexer;
+import Lexer.Tag;
 import Lexer.Token;
 import java.io.IOException;
 /**
@@ -52,5 +53,59 @@ public class Parser
     public void program() throws IOException
     {
         block();
+    }
+    
+    public void block() throws IOException
+    {
+        match('{');
+        decls();
+        stmts();
+        match('}');
+    }
+    
+    //what about int a,b, ... ca,d2
+    private void decls() throws IOException
+    {
+        type();
+        match(Tag.ID);
+        match(';');
+    }
+    
+    private void type() throws IOException
+    {
+        match(Tag.BASIC_TYPE);
+        if(look.tag=='[')
+        {
+            dims();
+        }
+    }
+    
+    private void dims() throws IOException
+    {
+        match('[');
+        match(Tag.NUM);
+        match(']');
+        if(look.tag=='[')
+        {
+            dims();
+        }
+    }
+    
+    private void stmts() throws IOException
+    {
+        if(look.tag=='}')
+        {
+            
+        }
+        else
+        {
+            stmt();
+            stmts();
+        }
+    }
+    
+    private void stmt() throws IOException
+    {
+        
     }
 }

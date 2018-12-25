@@ -174,6 +174,26 @@ public class Parser
     
     private void expr() throws IOException 
     {
+        term();
+        while(look.tag=='+' || look.tag=='-')
+        {
+            move();
+            term();
+        }
+    }
+    
+    private void term() throws IOException
+    {
+        unary();
+        while(look.tag =='*' || look.tag=='/')
+        {
+            move();
+            unary();
+        }
+    }
+    
+    private void unary() throws IOException
+    {
         
     }
 }

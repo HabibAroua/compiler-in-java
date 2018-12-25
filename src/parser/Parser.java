@@ -108,24 +108,52 @@ public class Parser
     {
         switch(look.tag)
         {
-            case ';'      : move();
-                            return ;
-            case Tag.IF   : match(Tag.IF);
-                            match('(');
-                            bool();
-                            match(')');
-                            stmt();
-                            if(look.tag!=Tag.ELSE)
-                            {
-                                return ;
-                            }
-                            match(Tag.ELSE);
-                            stmt();
-                            return;
-            
+            case ';'        : move();
+                              return ;
+            case Tag.IF     : match(Tag.IF);
+                              match('(');
+                              bool();
+                              match(')');
+                              stmt();
+                              if(look.tag!=Tag.ELSE)
+                              {
+                                  return ;
+                              }
+                              match(Tag.ELSE);
+                              stmt();
+                              return;
+            case Tag.WHILE  : match(Tag.WHILE);
+                              match('(');
+                              bool();
+                              match(')');
+                              stmt();
+                              return;
+            case Tag.BREAK  : match(Tag.BREAK); 
+                              match(';');
+                              return;
+            case '{'        : block();
+                              return;
+            default         : assign();
         }
     }
     
+    private void assign() throws IOException
+    {
+        match(Tag.ID);
+        if(look.tag=='=')
+        {
+            move();
+            bool();
+        }
+        else
+        {
+            offset();
+            match('=');
+            bool();
+            
+        }
+        match(';');
+    }
     private void bool() throws IOException
     {
         join();
@@ -143,7 +171,6 @@ public class Parser
         {
             move();
             equality();
-            //8:45
         }
     }
     

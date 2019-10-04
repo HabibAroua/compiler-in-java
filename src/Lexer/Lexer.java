@@ -36,9 +36,7 @@ public class Lexer
     {
         reserveKeywords();
     }
-    
-    
-    
+     
     private void read() throws IOException
     {
         peek = (char) System.in.read();
@@ -170,5 +168,5 @@ public class Lexer
         Token t=new Token(peek);
         peek=' ';
         return t;
-    } //video 2
+    }
 }

@@ -8,8 +8,8 @@ import parser.Parser;
  *
  * @author Habib Aroua
  */
-public class RedCompiler {
-
+public class RedCompiler 
+{
     /**
      * @param args the command line arguments
      */
